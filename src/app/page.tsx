@@ -3,6 +3,7 @@ import { DrivePhoto } from "@/components/DrivePhoto";
 import { HeroNoggles } from "@/components/HeroNoggles";
 import { LearningPath } from "@/components/LearningPath";
 import { InstagramIcon, SOCIALS, XIcon } from "@/components/SocialIcons";
+import { VideoCard } from "@/components/VideoCard";
 import { docFolders, getDocFolder } from "@/data/documentation";
 import { glossary } from "@/data/glossary";
 import { modules } from "@/data/modules";
@@ -14,6 +15,14 @@ export default function Home() {
   const funded = docFolders.filter((d) => d.category === "Proyek didanai");
   const activities = docFolders.filter((d) => d.category !== "Konsep").length;
   const media = docFolders.reduce((s, d) => s + d.photos.length + (d.videos?.length ?? 0), 0);
+  const videos = docFolders.flatMap((d) => (d.videos ?? []).map((v) => ({ ...v, from: d.title })));
+  const featuredIds = [
+    "1oJg9IOSrP-bkr-KUZQy78VHQdbZ3vAQF", // Bali: "Seru banget, jadi tau apa itu Nouns"
+    "182k9TE040IuPYNAZUqb0J9JHl2ZivREU", // Minggunouns edisi ketiga
+    "14-F0xQjJOF8-isrKOXfwbpukgEKZtIKW", // Wawancara Nounscraft
+  ];
+  const featured = featuredIds.map((id) => videos.find((v) => v.id === id)!);
+  const rest = videos.filter((v) => !featuredIds.includes(v.id));
   const highlightTerms = glossary.filter((t) => ["Seed phrase", "Gas fee", "DAO", "Rug pull"].includes(t.term));
 
   return (
@@ -110,6 +119,31 @@ export default function Home() {
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* VIDEO */}
+      <section className="border-t-[3px] border-ink bg-ink text-paper">
+        <div className="mx-auto max-w-6xl px-5 py-20">
+          <h2 className="text-5xl sm:text-6xl">Tonton keseruannya</h2>
+          <p className="mt-4 max-w-xl text-paper/80">
+            {videos.length} video dari kegiatan Nounsweek. Klik untuk memutar langsung di sini.
+          </p>
+          <div className="mt-10 grid gap-6 text-ink lg:grid-cols-[1.6fr_1fr]">
+            <VideoCard id={featured[0].id} title={featured[0].title} subtitle={featured[0].from} fill className="shadow-[6px_6px_0_0_var(--color-sun)]" />
+            <div className="grid gap-6">
+              {featured.slice(1).map((v) => (
+                <VideoCard key={v.id} id={v.id} title={v.title} subtitle={v.from} />
+              ))}
+            </div>
+          </div>
+          <ul className="mt-6 grid grid-cols-1 gap-6 text-ink sm:grid-cols-2 lg:grid-cols-4">
+            {rest.map((v) => (
+              <li key={v.id}>
+                <VideoCard id={v.id} title={v.title} subtitle={v.from} />
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       {/* JALUR BELAJAR */}

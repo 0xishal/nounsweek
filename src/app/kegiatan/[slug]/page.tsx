@@ -3,7 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DrivePhoto } from "@/components/DrivePhoto";
 import { Gallery } from "@/components/Gallery";
-import { docFolders, driveFolderUrl, driveVideoEmbed, drivePhoto, getDocFolder } from "@/data/documentation";
+import { VideoCard } from "@/components/VideoCard";
+import { docFolders, drivePhoto, getDocFolder } from "@/data/documentation";
 
 export function generateStaticParams() {
   return docFolders.map((d) => ({ slug: d.slug }));
@@ -41,9 +42,6 @@ export default async function DocPage({ params }: PageProps<"/kegiatan/[slug]">)
           <p className="max-w-prose text-lg">{d.summary}</p>
           <div className="rounded-md border-[3px] border-ink bg-paper p-5">
             <p><strong>{d.photos.length}</strong> foto{d.videos?.length ? <>, <strong>{d.videos.length}</strong> video</> : null}</p>
-            <a href={driveFolderUrl(d.driveFolderId)} target="_blank" rel="noreferrer" className="btn mt-4 bg-paper">
-              Buka folder di Google Drive
-            </a>
           </div>
         </div>
 
@@ -52,16 +50,8 @@ export default async function DocPage({ params }: PageProps<"/kegiatan/[slug]">)
             <h2 className="text-4xl">Video</h2>
             <ul className="mt-6 grid gap-6 md:grid-cols-2">
               {d.videos.map((v) => (
-                <li key={v.id} className="overflow-hidden rounded-md border-[3px] border-ink bg-ink">
-                  <iframe
-                    src={driveVideoEmbed(v.id)}
-                    title={v.title}
-                    loading="lazy"
-                    allow="autoplay; fullscreen"
-                    allowFullScreen
-                    className="aspect-video w-full"
-                  />
-                  <p className="bg-paper px-4 py-2 font-bold">{v.title}</p>
+                <li key={v.id}>
+                  <VideoCard id={v.id} title={v.title} />
                 </li>
               ))}
             </ul>

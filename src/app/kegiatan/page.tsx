@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DrivePhoto } from "@/components/DrivePhoto";
-import { docCategories, docFolders, driveFolderUrl, DRIVE_ROOT } from "@/data/documentation";
+import { docCategories, docFolders } from "@/data/documentation";
 
 export const metadata: Metadata = {
   title: "Kegiatan & dokumentasi",
@@ -24,9 +24,6 @@ export default function KegiatanPage() {
             {c.title}
           </a>
         ))}
-        <a href={driveFolderUrl(DRIVE_ROOT)} target="_blank" rel="noreferrer" className="rounded-md border-[3px] border-dashed border-ink px-3 py-1 font-display text-xl hover:bg-warm">
-          Folder Google Drive
-        </a>
       </nav>
 
       {docCategories.map((c) => {
