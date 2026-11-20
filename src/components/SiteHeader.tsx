@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { path, switchPath, type Lang } from "@/i18n/config";
+import { path, stripLang, switchPath, type Lang } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionary";
 import { SiteLogo } from "./SiteLogo";
 import { InstagramIcon, SOCIALS, XIcon } from "./SocialIcons";
@@ -40,7 +40,7 @@ export function SiteHeader({ lang }: { lang: Lang }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const t = getDictionary(lang);
-  const bare = pathname.replace(/^\/en(?=\/|$)/, "") || "/";
+  const bare = stripLang(pathname);
 
   const NAV = [
     { href: "/belajar", label: t.nav.learn },

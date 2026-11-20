@@ -14,6 +14,10 @@ export function path(p: string, lang: Lang) {
 
 /** Ubah pathname yang sedang dibuka ke bahasa lain (untuk tombol ganti bahasa). */
 export function switchPath(pathname: string, to: Lang) {
-  const bare = pathname.replace(/^\/en(?=\/|$)/, "") || "/";
-  return path(bare, to);
+  return path(stripLang(pathname), to);
+}
+
+/** Hapus awalan bahasa dari pathname. Di Vercel, usePathname bisa berisi /id hasil rewrite. */
+export function stripLang(pathname: string) {
+  return pathname.replace(/^\/(id|en)(?=\/|$)/, "") || "/";
 }
