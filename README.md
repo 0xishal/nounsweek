@@ -11,16 +11,17 @@ Dibangun dengan Next.js 16 + Tailwind CSS 4. Gaya visual mengikuti dunia Nouns (
 | `/` | Beranda: hero noggles interaktif, jalur belajar, sorotan kegiatan, istilah populer |
 | `/belajar` | Jalur 7 modul |
 | `/belajar/[slug]` | Materi modul + perumpamaan + ringkasan + kuis 3 soal |
-| `/kegiatan` | Timeline 2023–2026 dengan filter jenis kegiatan |
+| `/kegiatan` | Dokumentasi per folder Drive: kegiatan, proyek yang didanai, konsep desain |
+| `/kegiatan/[slug]` | Galeri foto (dengan lightbox), video, dan link ke folder Drive |
 | `/kamus` | Kamus istilah Web3 dengan pencarian |
 
 ## Mengubah konten (tanpa menyentuh desain)
 
 - **Materi belajar**: `src/data/modules.ts`
-- **Kegiatan**: `src/data/events.ts` — data sekarang masih **contoh**. Ganti dengan kegiatan asli dan hapus `sample: true`. Foto taruh di `public/kegiatan/` lalu isi field `photo`.
+- **Kegiatan & dokumentasi**: `src/data/documentation.ts`. Satu entri = satu folder di [Google Drive Nounsweek](https://drive.google.com/drive/folders/19kzTvtKPRZ46N-miEji5SrOpoW8j5yD9). Foto & video diambil langsung dari Drive lewat ID file, jadi file harus tetap dibagikan "Siapa saja yang memiliki link". Tambah foto: salin ID dari URL file Drive (`/file/d/<ID>/view`) ke array `photos`.
+- **Logo**: simpan file ke `public/logo-nounsweek.png`, lalu isi `LOGO_SRC` di `src/components/SiteLogo.tsx`.
 - **Kamus**: `src/data/glossary.ts`
-- **Link sosial media**: `src/components/SiteFooter.tsx`
-- **Email kolaborasi**: `src/app/page.tsx` (cari `mailto:`)
+- **Link sosial media**: `src/components/SocialIcons.tsx`
 
 ## Menjalankan lokal
 

@@ -12,8 +12,8 @@ const COLORS = [
   { name: "hitam", value: "#1f1d29" },
 ];
 
-// Noggles besar di hero: pupilnya melirik ke arah kursor, klik untuk ganti warna.
-export function HeroNoggles() {
+// Noggles interaktif: pupil melirik ke arah kursor, klik untuk ganti warna.
+export function HeroNoggles({ className = "" }: { className?: string }) {
   const ref = useRef<HTMLButtonElement>(null);
   const [look, setLook] = useState<-1 | 1>(1);
   const [i, setI] = useState(0);
@@ -32,17 +32,15 @@ export function HeroNoggles() {
   const next = COLORS[(i + 1) % COLORS.length];
 
   return (
-    <div className="flex flex-col items-start gap-3">
-      <button
-        ref={ref}
-        type="button"
-        onClick={() => setI((v) => (v + 1) % COLORS.length)}
-        aria-label={`Ganti warna noggles ke ${next.name}`}
-        className="w-full cursor-pointer rounded-md"
-      >
-        <Noggles color={COLORS[i].value} look={look} className="w-full drop-shadow-[8px_8px_0_var(--color-ink)]" />
-      </button>
-      <p className="text-sm text-ink/70">Klik noggles untuk ganti warna. Semua karya Nouns bebas dipakai (CC0).</p>
-    </div>
+    <button
+      ref={ref}
+      type="button"
+      onClick={() => setI((v) => (v + 1) % COLORS.length)}
+      aria-label={`Ganti warna noggles ke ${next.name}`}
+      title="Klik untuk ganti warna"
+      className={`cursor-pointer rounded-md ${className}`}
+    >
+      <Noggles color={COLORS[i].value} look={look} className="w-full drop-shadow-[6px_6px_0_var(--color-ink)]" />
+    </button>
   );
 }
