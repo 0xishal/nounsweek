@@ -29,8 +29,8 @@ export default async function DocPage({ params }: PageProps<"/kegiatan/[slug]">)
       <header className="relative isolate overflow-hidden border-b-[3px] border-ink bg-ink text-paper">
         <DrivePhoto id={d.cover} alt="" priority sizes="100vw" className="absolute inset-0 -z-10 h-full w-full object-cover opacity-45" />
         <div className="mx-auto max-w-6xl px-5 pb-14 pt-24 sm:pt-36">
-          <Link href="/kegiatan" className="underline underline-offset-4">Semua kegiatan</Link>
-          <p className="mt-6 inline-block rounded bg-sun px-2 py-0.5 font-bold text-ink">{d.category}</p>
+          <Link href="/kegiatan" className="block w-fit underline underline-offset-4">Semua kegiatan</Link>
+          <p className="mt-6 w-fit rounded bg-sun px-2 py-0.5 font-bold text-ink">{d.category}</p>
           <h1 className="mt-3 max-w-4xl text-6xl sm:text-8xl">{d.title}</h1>
           <p className="mt-4 font-display text-2xl">{d.when}{d.place ? `, ${d.place}` : ""}</p>
         </div>

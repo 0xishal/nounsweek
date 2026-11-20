@@ -79,7 +79,7 @@ export const docFolders: DocFolder[] = [
     when: "Maret 2024",
     place: "Bali",
     summary:
-      "Acara utama Nounsweek 2024 di Bali: pameran merchandise bertema Nouns, instalasi noggles, dan sesi perkenalan Nouns serta Web3 untuk pengunjung. Banyak yang pulang dengan kesan “seru banget, jadi tau apa itu Nouns”.",
+      "Acara utama Nounsweek 2024 di Bali: pameran merchandise dan karya seni bertema Nouns, sesi diskusi dan workshop, serta perkenalan Nouns dan Web3 untuk pengunjung. Banyak yang pulang dengan kesan “seru banget, jadi tau apa itu Nouns”.",
     driveFolderId: "1yg81P7DjssX9wYIJXLCGGENci1v2mDjv",
     cover: "1XgPLiMBh5SZAoOBjv-W3AImSELhXVPkD",
     photos: [
@@ -135,7 +135,7 @@ export const docFolders: DocFolder[] = [
     year: 2024,
     when: "Maret–April 2024",
     summary:
-      "Kain dan pakaian batik dengan motif noggles. Proyek ini memadukan kerajinan batik Indonesia dengan karya CC0 Nouns, dan produknya sempat dijual secara online.",
+      "Kemeja batik bermotif Nouns yang dibuat bersama pengrajin batik. Proyek ini memadukan kerajinan Indonesia dengan karya CC0 Nouns, dan produknya dijual secara online.",
     driveFolderId: "1uVts-Nh6HLln8UklCK-EKOYT467W4CUd",
     cover: "1VAEW_0HQWklu7-x7zB0GWh3NtxiWS9Vm",
     posterIds: ["1H9M_m0hvgTukBcwMR_qbXm7fP2vyhk-c", "1_As7NBR27Nmz0XHJuy2xg9HgORFXDPtQ"],
@@ -153,7 +153,7 @@ export const docFolders: DocFolder[] = [
     category: "Proyek didanai",
     year: 2024,
     when: "April 2024",
-    summary: "Cokelat dengan kemasan dan cetakan bertema Nouns, salah satu cara membawa noggles ke produk sehari-hari.",
+    summary: "Cokelat berbungkus emas dengan stiker noggles, dijual dalam toples. Cara manis membawa Nouns ke produk sehari-hari.",
     driveFolderId: "1DiYZyCnJx4N-8DwuQy-ezVt7P57Y8QLE",
     cover: "1gF5v-Xl2oFRLQeX9JGUxXMtOeSmPUNvu",
     photos: ["1gF5v-Xl2oFRLQeX9JGUxXMtOeSmPUNvu", "1QSkHp-j5kAhY0437UPf1CRVbszyerC12", "1EHWMk--UDMxgZkTEPGj8AUAfCSlnSw7i"],
@@ -164,7 +164,7 @@ export const docFolders: DocFolder[] = [
     category: "Proyek didanai",
     year: 2024,
     when: "Mei 2024",
-    summary: "Kunjungan dan donasi ke panti asuhan. Dana komunitas Nouns dipakai langsung untuk berbagi dengan anak-anak.",
+    summary: "Santunan anak yatim: tas sekolah bergambar Nouns dibagikan langsung ke anak-anak panti asuhan dari dana komunitas.",
     driveFolderId: "1QqSmGKCoEvCqmNEVw8ujP3s4DkJsoGhc",
     cover: "1JaQEVIJYEijNgJ1VXwhYYDij2TWEyrR1",
     photos: [
@@ -180,7 +180,7 @@ export const docFolders: DocFolder[] = [
     category: "Proyek didanai",
     year: 2024,
     when: "Maret–April 2024",
-    summary: "Aksi peduli lingkungan bertema Nouns: tempat sampah dan kegiatan bersih-bersih untuk mengajak warga menjaga kebersihan.",
+    summary: "Tempat sampah berbentuk noggles yang dibuat dan dipasang di ruang publik, mengajak warga membuang sampah pada tempatnya.",
     driveFolderId: "1st2lQo3GNjZoD3H3qro8X16OhxTP4p-s",
     cover: "1TNySeXSB--8IXzugTH1U72e9xrTTpeAN",
     photos: [
@@ -200,7 +200,7 @@ export const docFolders: DocFolder[] = [
     year: 2025,
     when: "Desember 2024–Mei 2025",
     summary:
-      "Nounscraft mengajak anak muda berkarya dengan tangan: kerajinan dan merchandise bertema noggles, lengkap dengan wawancara tim dan dokumentasi produk.",
+      "Nounscraft mengajak anak-anak dan keluarga berkarya: mewarnai dan membuat kerajinan bertema Nouns, booth keliling, dan figur noggles. Lengkap dengan video wawancara tim.",
     driveFolderId: "1KFIm5cnz3wdLl2nOKux1DrJnWkO6gDAj",
     cover: "1WxLx4RJ4U1jPk5IT3Ik8035tmkXFfstz",
     posterIds: ["1T-V1KAgQIZqAljhrnkZDsyb-Iz7vgWDr"],
@@ -299,9 +299,9 @@ export const docFolders: DocFolder[] = [
     category: "Konsep",
     year: 2024,
     when: "Konsep desain",
-    summary: "Eksplorasi desain rumah dan interior dengan elemen khas Nouns, dari fasad sampai suasana lingkungan sekitarnya.",
+    summary: "Eksplorasi desain furnitur bertema Nouns, seperti bangku dan meja dengan bentuk terinspirasi noggles, lengkap dengan render suasana ruangnya.",
     driveFolderId: "1hlSA2AWkzIeM_qxEJDVP23o84iPfFqh0",
-    cover: "1rX8eaOjhHq6tu79bLl1zUmppK6NI42l4",
+    cover: "1akGmcT02Hn_zSg3IqR7C625vsTuR_wg0",
     photos: [
       "1rX8eaOjhHq6tu79bLl1zUmppK6NI42l4",
       "1MAfYObzl02g2OQjDxtD_RSWGZSG0QqDM",
@@ -319,7 +319,7 @@ export const docFolders: DocFolder[] = [
     category: "Konsep",
     year: 2024,
     when: "April 2024",
-    summary: "Konsep hunian kos bertema Nouns untuk mahasiswa, lengkap dengan render 3D dan video walkthrough.",
+    summary: "Konsep kamar kos bertema Nouns untuk mahasiswa, dengan karya seni Nouns di dinding. Lengkap dengan render 3D dan video walkthrough.",
     driveFolderId: "1u12am_9vo4YWhsMG9a-fSDBLrCexaGWI",
     cover: "1z1hCNyDtnX4vozgogOw9ImLulvS_Gimd",
     photos: ["1z1hCNyDtnX4vozgogOw9ImLulvS_Gimd", "1FQLuBJdegCcy0892Yc3p_v6fS6E5iTwi", "1TBA1PMeBmG1BcWF3le0fSX834jZUjKbr"],
