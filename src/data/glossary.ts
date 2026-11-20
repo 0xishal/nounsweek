@@ -1,4 +1,7 @@
-// Kamus istilah Web3. Tambahkan istilah baru di array ini.
+// Kamus istilah Web3. Tambahkan istilah baru di array ini (versi Inggris: glossary.en.ts).
+import { glossaryEn } from "./glossary.en";
+import type { Lang } from "@/i18n/config";
+
 export type Term = { term: string; meaning: string };
 
 export const glossary: Term[] = [
@@ -79,3 +82,6 @@ export const glossary: Term[] = [
   { term: "WAGMI", meaning: "We're All Gonna Make It. Ungkapan semangat di komunitas Web3." },
   { term: "Whale", meaning: "Pemilik aset crypto dalam jumlah sangat besar yang transaksinya bisa menggerakkan harga pasar." },
 ].sort((a, b) => a.term.localeCompare(b.term, "id", { sensitivity: "base" }));
+
+
+export const getGlossary = (lang: Lang) => (lang === "en" ? glossaryEn : glossary);

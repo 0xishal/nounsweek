@@ -2,8 +2,11 @@
 
 import { useState } from "react";
 import type { QuizItem } from "@/data/modules";
+import type { Lang } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionary";
 
-export function Quiz({ items }: { items: QuizItem[] }) {
+export function Quiz({ lang, items }: { lang: Lang; items: QuizItem[] }) {
+  const t = getDictionary(lang).quiz;
   const [picked, setPicked] = useState<(number | null)[]>(() => items.map(() => null));
   const answered = picked.filter((p) => p !== null).length;
   const correct = picked.filter((p, i) => p === items[i].answer).length;
@@ -37,15 +40,15 @@ export function Quiz({ items }: { items: QuizItem[] }) {
                         className={`rounded-md border-[3px] border-ink px-4 py-2.5 text-left ${style}`}
                       >
                         {opt}
-                        {done && isAnswer && <span className="sr-only"> (jawaban benar)</span>}
-                        {done && isChoice && !isAnswer && <span className="sr-only"> (pilihanmu, kurang tepat)</span>}
+                        {done && isAnswer && <span className="sr-only">{t.srCorrect}</span>}
+                        {done && isChoice && !isAnswer && <span className="sr-only">{t.srWrong}</span>}
                       </button>
                     );
                   })}
                 </div>
                 {done && (
                   <p className="mt-3 rounded-md bg-cool px-4 py-3" role="status">
-                    <strong>{choice === item.answer ? "Benar." : "Belum tepat."}</strong> {item.explain}
+                    <strong>{choice === item.answer ? t.correct : t.wrong}</strong> {item.explain}
                   </p>
                 )}
               </fieldset>
@@ -57,11 +60,11 @@ export function Quiz({ items }: { items: QuizItem[] }) {
       {answered === items.length && (
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-md border-[3px] border-ink bg-sun px-5 py-4">
           <p className="font-display text-3xl">
-            Skor kamu {correct}/{items.length}
+            {t.score(correct, items.length)}
             {correct === items.length ? " ⌐◨-◨" : ""}
           </p>
           <button type="button" className="btn bg-paper" onClick={() => setPicked(items.map(() => null))}>
-            Ulangi kuis
+            {t.retry}
           </button>
         </div>
       )}

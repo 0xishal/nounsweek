@@ -5,6 +5,10 @@
 // Foto ditampilkan lewat CDN Google (lh3.googleusercontent.com) dan dioptimasi oleh Vercel,
 // jadi file di Drive HARUS tetap "Siapa saja yang memiliki link dapat melihat".
 // Untuk menambah foto: buka file di Drive, salin ID dari URL (/file/d/<ID>/view) ke array.
+// Teks versi Inggris ada di documentation.en.ts.
+
+import { docTranslationsEn } from "./documentation.en";
+import type { Lang } from "@/i18n/config";
 
 export type DocCategory = "Kegiatan" | "Proyek didanai" | "Konsep";
 
@@ -327,12 +331,25 @@ export const docFolders: DocFolder[] = [
   },
 ];
 
-export function getDocFolder(slug: string) {
-  return docFolders.find((d) => d.slug === slug);
+/** Data dokumentasi sesuai bahasa (teks Inggris dari documentation.en.ts). */
+export function getDocFolders(lang: Lang): DocFolder[] {
+  if (lang === "id") return docFolders;
+  return docFolders.map((d) => {
+    const t = docTranslationsEn[d.slug];
+    if (!t) return d;
+    return {
+      ...d,
+      title: t.title ?? d.title,
+      when: t.when,
+      place: t.place ?? d.place,
+      summary: t.summary,
+      videos: d.videos?.map((v, i) => ({ ...v, title: t.videoTitles?.[i] ?? v.title })),
+    };
+  });
 }
 
-export const docCategories: { key: DocCategory; title: string; blurb: string }[] = [
-  { key: "Kegiatan", title: "Kegiatan", blurb: "Acara yang kami adakan bersama komunitas." },
-  { key: "Proyek didanai", title: "Proyek yang didanai Nounsweek", blurb: "Ide komunitas yang kami bantu wujudkan." },
-  { key: "Konsep", title: "Konsep desain", blurb: "Eksplorasi ruang dan produk bertema Nouns." },
-];
+export function getDocFolder(slug: string, lang: Lang = "id") {
+  return getDocFolders(lang).find((d) => d.slug === slug);
+}
+
+export const docCategoryKeys: DocCategory[] = ["Kegiatan", "Proyek didanai", "Konsep"];

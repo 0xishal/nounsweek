@@ -15,6 +15,13 @@ Dibangun dengan Next.js 16 + Tailwind CSS 4. Gaya visual mengikuti dunia Nouns (
 | `/kegiatan/[slug]` | Galeri foto (dengan lightbox), video, dan link ke folder Drive |
 | `/kamus` | Kamus istilah Web3 dengan pencarian |
 
+## Dua bahasa (Indonesia & Inggris)
+
+- Bahasa Indonesia di URL biasa (`/belajar`), bahasa Inggris dengan awalan `/en` (`/en/belajar`). Tombol **ID / EN** di header berpindah ke halaman yang sama di bahasa lain.
+- Teks antarmuka: `src/i18n/dictionary.ts` (objek `id` dan `en`).
+- Konten versi Inggris: `src/data/modules.en.ts`, `src/data/glossary.en.ts`, `src/data/documentation.en.ts`.
+- Saat menambah modul, istilah, atau dokumentasi baru, tambahkan juga versi Inggrisnya.
+
 ## Mengubah konten (tanpa menyentuh desain)
 
 - **Materi belajar**: `src/data/modules.ts`

@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import { drivePhoto, driveVideoEmbed } from "@/data/documentation";
+import type { Lang } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionary";
 import { Noggles } from "./Noggles";
 
-type Props = { id: string; title: string; subtitle?: string; className?: string; fill?: boolean };
+type Props = { lang: Lang; id: string; title: string; subtitle?: string; className?: string; fill?: boolean };
 
 // Video dari Drive. Awalnya hanya thumbnail (ringan); pemutar dimuat saat diklik.
-export function VideoCard({ id, title, subtitle, className = "", fill = false }: Props) {
+export function VideoCard({ lang, id, title, subtitle, className = "", fill = false }: Props) {
   const [playing, setPlaying] = useState(false);
   const [thumbFailed, setThumbFailed] = useState(false);
 
@@ -23,7 +25,7 @@ export function VideoCard({ id, title, subtitle, className = "", fill = false }:
             className="absolute inset-0 h-full w-full"
           />
         ) : (
-          <button type="button" onClick={() => setPlaying(true)} className="group absolute inset-0 block w-full" aria-label={`Putar video: ${title}`}>
+          <button type="button" onClick={() => setPlaying(true)} className="group absolute inset-0 block w-full" aria-label={getDictionary(lang).gallery.play(title)}>
             {thumbFailed ? (
               <span className="absolute inset-0 flex items-center justify-center bg-grape">
                 <Noggles className="w-1/3" />

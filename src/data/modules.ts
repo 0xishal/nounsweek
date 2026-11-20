@@ -1,5 +1,8 @@
 // Materi belajar Nounsweek. Edit teks di sini untuk mengubah isi modul.
-// Urutan array = urutan jalur belajar.
+// Urutan array = urutan jalur belajar. Versi Inggris ada di modules.en.ts.
+
+import { modulesEn } from "./modules.en";
+import type { Lang } from "@/i18n/config";
 
 export type QuizItem = {
   q: string;
@@ -393,6 +396,11 @@ export const modules: LearningModule[] = [
   },
 ];
 
-export function getModule(slug: string) {
-  return modules.find((m) => m.slug === slug);
+
+export function getModules(lang: Lang): LearningModule[] {
+  return lang === "en" ? modulesEn : modules;
+}
+
+export function getModule(slug: string, lang: Lang = "id") {
+  return getModules(lang).find((m) => m.slug === slug);
 }
