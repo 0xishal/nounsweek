@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@import "@fontsource/londrina-solid/400.css";
+@import "@fontsource/londrina-solid/900.css";
+@import "@fontsource/atkinson-hyperlegible/400.css";
+@import "@fontsource/atkinson-hyperlegible/700.css";
+
+/* Palet diambil dari dunia Nouns (latar "cool" & "warm" khas lelang Nouns). */
+@theme {
+  --color-cool: #d5d7e1;
+  --color-warm: #e1d7d5;
+  --color-ink: #1f1d29;
+  --color-noggle: #d22209;
+  --color-sun: #fec22f;
+  --color-sky: #2b83f6;
+  --color-leaf: #4bb543;
+  --color-grape: #9c5bd6;
+  --color-paper: #ffffff;
+
+  --font-display: "Londrina Solid", system-ui, sans-serif;
+  --font-sans: "Atkinson Hyperlegible", system-ui, sans-serif;
+
+  --shadow-block: 6px 6px 0 0 var(--color-ink);
+  --shadow-chip: 3px 3px 0 0 var(--color-ink);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+body {
+  background: var(--color-cool);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.005em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-sky);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--color-sun);
+  color: var(--color-ink);
+}
+
+/* Tombol: kotak tebal dengan bayangan keras, "ditekan" saat diklik */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 3px solid var(--color-ink);
+  box-shadow: var(--shadow-chip);
+  padding: 0.65rem 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1;
+  border-radius: 6px;
+  transition: transform 80ms ease, box-shadow 80ms ease;
+}
+.btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 0 var(--color-ink);
+}
+.btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 0 var(--color-ink);
+}
+
+.pixel {
+  shape-rendering: crispEdges;
+  image-rendering: pixelated;
+}
+
+.prose-nw p + p {
+  margin-top: 1rem;
+}
