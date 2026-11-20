@@ -20,7 +20,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-30 border-b-[3px] border-ink bg-cool/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
         <Link href="/" aria-label="Nounsweek, ke beranda" onClick={() => setOpen(false)}>
-          <SiteLogo />
+          <SiteLogo className="h-10 sm:h-12" />
         </Link>
 
         <div className="hidden items-center gap-6 sm:flex">

@@ -7,7 +7,7 @@ export function SiteFooter() {
     <footer className="mt-auto bg-ink text-cool">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <SiteLogo variant="light" />
+          <SiteLogo className="h-12" />
           <p className="mt-4 max-w-sm text-cool/80">
             Nounsweek mengajak mahasiswa dan remaja Indonesia memahami Web3 dari dasar, dengan bahasa yang gampang dan cara yang aman.
           </p>

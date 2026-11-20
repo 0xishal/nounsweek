@@ -19,7 +19,7 @@ Dibangun dengan Next.js 16 + Tailwind CSS 4. Gaya visual mengikuti dunia Nouns (
 
 - **Materi belajar**: `src/data/modules.ts`
 - **Kegiatan & dokumentasi**: `src/data/documentation.ts`. Satu entri = satu folder di [Google Drive Nounsweek](https://drive.google.com/drive/folders/19kzTvtKPRZ46N-miEji5SrOpoW8j5yD9). Foto & video diambil langsung dari Drive lewat ID file, jadi file harus tetap dibagikan "Siapa saja yang memiliki link". Tambah foto: salin ID dari URL file Drive (`/file/d/<ID>/view`) ke array `photos`.
-- **Logo**: simpan file ke `public/logo-nounsweek.png`, lalu isi `LOGO_SRC` di `src/components/SiteLogo.tsx`.
+- **Logo**: `public/logo-nounsweek.png` (ganti file ini untuk memperbarui logo).
 - **Kamus**: `src/data/glossary.ts`
 - **Link sosial media**: `src/components/SocialIcons.tsx`
 
